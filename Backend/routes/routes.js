@@ -1,6 +1,6 @@
 import express from "express";
 import { body, validationResult } from "express-validator";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { Users } from "../Models/userModel.js";
 import download from 'image-downloader';
 export const router = express.Router();
