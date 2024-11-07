@@ -11,7 +11,7 @@ function Bookings() {
   });
 
   async function fetchBookings() {
-    let response = await fetch("http://localhost:3000/api/getBookings", {
+    let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/getBookings`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

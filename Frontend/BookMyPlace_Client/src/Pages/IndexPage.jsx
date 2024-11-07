@@ -10,7 +10,7 @@ function IndexPage() {
 
 
   async function fetchAllPlaces(){
-    let response = await fetch("http://localhost:3000/api/allPlaces");
+    let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/allPlaces`);
     response = await response.json();
     setAllPlaces(response);
   }

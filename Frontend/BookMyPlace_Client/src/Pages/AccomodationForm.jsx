@@ -35,7 +35,7 @@ function Accomodation() {
     };
 
     if (placeID.id) {
-      let response1 = await fetch("http://localhost:3000/api/updateForm", {
+      let response1 = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/updateForm`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -47,10 +47,10 @@ function Accomodation() {
         }),
       });
       response1 = await response1.json();
-      console.log(response1);
+     
     } 
     else {
-      let response = await fetch("http://localhost:3000/api/saveForm", {
+      let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/saveForm`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ function Accomodation() {
         }),
       });
       response = await response.json();
-      console.log(response);
+      
     }
     navigate("/account/accomodation");
   }
@@ -105,7 +105,7 @@ function Accomodation() {
 
 
   async function getPlaceData() {
-    let data = await fetch("http://localhost:3000/api/placeEdit", {
+    let data = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/placeEdit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -146,7 +146,7 @@ function Accomodation() {
     }
 
 
-    let response = await fetch("http://localhost:3000/api/uploadViaStorage", {
+    let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/uploadViaStorage`, {
       method: "POST",
       body: data,
     });
@@ -162,7 +162,7 @@ function Accomodation() {
 
   async function addPhotoLink(e) {
     e.preventDefault();
-    let response = await fetch("http://localhost:3000/api/upload", {
+    let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/upload`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

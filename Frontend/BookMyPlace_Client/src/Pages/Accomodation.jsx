@@ -15,7 +15,7 @@ function Accomodation() {
   }, []);
 
   async function fetchPlaces() {
-    const response = await fetch("http://localhost:3000/api/places", {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/places`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

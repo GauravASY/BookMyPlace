@@ -27,8 +27,7 @@ function PlacePage() {
   }
 
   async function fetchPlace() {
-    console.log(placeID);
-    let response = await fetch("http://localhost:3000/api/currentPlace", {
+    let response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/currentPlace`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +42,7 @@ function PlacePage() {
 
   async function handleBooking(e){
       e.preventDefault();
-      const response = await fetch("http://localhost:3000/api/makeBooking", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/makeBooking`, {
         method:"POST", 
         headers :{
           "Content-Type" : "application/json"
